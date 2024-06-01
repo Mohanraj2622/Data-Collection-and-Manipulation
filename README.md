@@ -31,7 +31,7 @@ This project is a User Management System built with Flask, a Python web framewor
 
 1. **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone <https://github.com/Mohanraj2622/Data-Collection-and-Manipulation.git>
     cd user-management-system
     ```
 
