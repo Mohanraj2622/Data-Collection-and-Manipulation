@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Management</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            animation: colorChange 10s infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #333;
+            }
+            25% {
+                color: #666;
+            }
+            50% {
+                color: #999;
+            }
+            75% {
+                color: #ccc;
+            }
+            100% {
+                color: #333;
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>User Management</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('list_users') }}">View Users</a></li>
+                <li><a href="{{ url_for('add_user') }}">Add User</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to User Management</h1>
+        <p>Choose an action from the menu above.</p>
+
+        <h2>Users Details</h2>
+        <ul>
+            {% for user in users %}
+            <li>{{ user[1] }} ({{ user[2] }})</li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        &copy; 2024 User Management. All rights reserved.
+    </footer>
+
+    <script>
+        // Function to change the font family after 10 seconds
+        setTimeout(function() {
+            document.body.style.fontFamily = 'Arial, sans-serif';
+        }, 10000);
+    </script>
+</body>
+</html>
